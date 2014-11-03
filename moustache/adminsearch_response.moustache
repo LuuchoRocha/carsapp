@@ -1,0 +1,19 @@
+<table>
+    <tr class="tr_title">
+      <td colspan="2">Resultados</td>
+    </tr>
+    <tr class="tr_title">
+      <td>ID</td>
+      <td>E-Mail</td>
+    </tr>
+    {{#administrators}}
+    <tr>
+      <td>
+        {{getId}}
+      </td>
+      <td>
+        {{toString}}
+      </td>
+    </tr>
+    {{/administrators}} 
+</table>

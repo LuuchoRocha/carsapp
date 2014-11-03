@@ -1,0 +1,18 @@
+<table>
+    <tr class="tr_title">
+      <td>
+        Nombre
+      </td><td>
+        Dueño
+      </td>
+    </tr>
+    {{#vehicles}}
+      <tr>
+          <td>
+          {{toString}}
+          </td><td>
+          {{owner}}
+          </td>
+      </tr>
+    {{/vehicles}} 
+</table>

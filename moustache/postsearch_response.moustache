@@ -1,0 +1,23 @@
+<table>
+    <tr class="tr_title">
+      <td colspan="3">Resultados</td>
+    </tr>
+    <tr class="tr_title">
+      <td>Autor</td>
+      <td>Vehiculo</td>
+      <td>Texto</td>
+    </tr>
+    {{#posts}}
+    <tr>
+      <td>
+        {{author}}
+      </td>
+      <td>
+        {{vehicle}}
+      </td>
+      <td>
+        {{text}}
+      </td>
+    </tr>
+    {{/posts}} 
+</table>

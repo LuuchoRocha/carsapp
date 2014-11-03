@@ -1,0 +1,22 @@
+<table>
+    <tr class="tr_title">
+      <td>
+        Vehiculo
+      </td><td>
+        Texto
+      </td><td>
+        Precio
+      </td>
+    </tr>
+    {{#posts}}
+      <tr>
+          <td>
+            {{vehicle}}
+          </td><td>
+            {{text}}
+          </td><td>
+            {{price}}
+          </td>
+      </tr>
+    {{/posts}} 
+</table>

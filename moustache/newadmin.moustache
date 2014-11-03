@@ -1,0 +1,20 @@
+<form id="formulario" method="post" action="administrators">
+    <table>
+        <tr class="tr_title">
+            <td colspan="2">Registrar un administrador</td>
+        </tr>
+        <tr>
+            <td class="td_left">E-Mail:</td>
+            <td class="td_right"><input type=text name="email"></td>
+        </tr>
+        <tr>
+            <td class="td_left">Contraseña:</td>
+            <td class="td_right"><input type=password name="pass"></td>
+        </tr>
+		<tr>
+            <td colspan="2">
+                <input type=submit value="Registrar">
+            </td>
+        </tr>
+    </table>
+</form> 

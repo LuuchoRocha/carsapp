@@ -1,0 +1,7 @@
+<form id="search_form" onsubmit="return false">
+    <table>
+        <tr class="tr_title">
+            <td>Usted no puede realizar una búsqueda vacía.</td>
+        </tr>
+    </table>
+</form>

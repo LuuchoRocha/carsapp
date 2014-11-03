@@ -1,0 +1,19 @@
+<table>
+    <tr class="tr_title">
+        <td colspan="2">Eliminar un vehiculo</td>
+    </tr><tr>
+        <td class="td_left">Vehiculo</td>
+        <td class="td_right">
+            <select id="vehicle_id">
+                <option value="-1" selected style="visibility: hidden; display: none" disabled="true"></option>
+                {{#vehicles}}
+                    <option value="{{getId}}">{{toString}}</option>
+                {{/vehicles}}  
+            </select>        
+        </td>
+    </tr><tr>
+        <td colspan="2">
+            <input type=button onclick="eliminar('vehicles', 'vehicle_id')" value="Eliminar" />
+        </td>
+    </tr>
+</table>

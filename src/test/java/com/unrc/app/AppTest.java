@@ -7,7 +7,21 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ UserTest.class })
+@SuiteClasses({
+    AdministratorTest.class,
+    AnswerTest.class,
+    BikeTest.class,
+    CarTest.class,
+    CityTest.class,
+    OtherTest.class,
+    PhoneTest.class,
+    PostTest.class,
+    QuestionTest.class,
+    RateTest.class,
+    TruckTest.class,
+    UserTest.class,
+    VehicleTest.class,
+})
 public class AppTest {
     @BeforeClass
     public static void setUpClass() {

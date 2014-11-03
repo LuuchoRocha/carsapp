@@ -1,0 +1,67 @@
+<form method="post" action="vehicles">
+    <table>
+        <tr class="tr_title">
+            <td colspan="2">Formulario de registro de vehiculo</td>
+        </tr><tr>
+            <td class="td_left">Nombre:</td>
+            <td class="td_right"><input type=text name="name" /></td>
+        </tr><tr>
+            <td class="td_left">Marca:</td>
+            <td class="td_right"><input type=text name="brand" /> </td>
+        </tr><tr>
+            <td class="td_left">Año</td>
+            <td class="td_right"><input type=text name="year" /></td>
+        </tr><tr>
+            <td class="td_left">Patente</td>
+            <td class="td_right"><input type=text name="plate" /></td>
+        </tr><tr>
+            <td class="td_left">Tipo:</td>
+            <td class="td_right">    
+                <select name="type" id="vehicle_type">
+                    <option value="car">auto</option>
+                    <option value="truck">camion</option>
+                    <option value="bike">moto</option>
+                    <option value="other">otro</option>
+                </select><br>
+            </td>
+        </tr><tr>
+            <td class="td_left">Cantidad de puertas:</td>
+            <td class="td_right">
+                <select name="doors" id="doors">
+                    <option value="0">-</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </td>
+        </tr><tr>
+            <td class="td_left">Cantidad Pasajeros:</td>
+            <td class="td_right"><input type=text name=passengers></td>
+        </tr><tr>
+            <td class="td_left">Carga Maxima:</td>
+            <td class="td_right"><input type=text name=max_load></td>
+        </tr><tr>
+            <td class="td_left">Cilindrada:</td>
+            <td class="td_right">
+                <select name="displacement">
+                    <option value="70">70 cc</option>
+                    <option value="90">90 cc</option>
+                    <option value="110">110 cc</option>
+                    <option value="125">125 cc</option>
+                    <option value="150">150 cc</option>
+                    <option value="200">200 cc</option>
+                    <option value="250">250 cc</option>
+                    <option value="400">400 cc</option>
+                    <option value="600">600 cc</option>
+                    <option value="1100">1100 cc</option>
+                    <option value="0">otro</option>
+                </select>
+            </td>
+        </tr><tr>
+            <td colspan="2">
+                <input type=submit value="Enviar" />
+            </td>
+        </tr>
+    </table>
+</form>

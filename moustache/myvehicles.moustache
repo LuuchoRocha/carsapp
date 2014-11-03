@@ -1,0 +1,24 @@
+<table>
+    <tr class="tr_title">
+        <td colspan="3">Mis vehiculos</td>
+    </tr><tr class="tr_title">
+      <td>
+        Nombre
+      </td><td>
+        Marca
+      </td><td>
+        Año
+      </td>
+    </tr>
+    {{#vehicles}}
+      <tr>
+          <td>
+            {{name}}
+          </td><td>
+            {{brand}}
+          </td><td>
+            {{year}}
+          </td>
+      </tr>
+    {{/vehicles}} 
+</table>

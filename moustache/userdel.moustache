@@ -1,0 +1,21 @@
+<table>
+    <tr class="tr_title">
+        <td colspan="2">Eliminar un usuario</td>
+    </tr>
+    <tr>
+        <td class="td_left">Usuario</td>
+        <td class="td_right">
+            <select id="user_id">
+                <option value="-1" selected style="visibility: hidden; display: none" disabled="true"></option>
+                {{#users}}
+                    <option value="{{getId}}">{{toString}}</option>
+                {{/users}}  
+            </select>        
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type=button onclick="eliminar('users', 'user_id')" value="Eliminar usuario">
+        </td>
+    </tr>
+</table>

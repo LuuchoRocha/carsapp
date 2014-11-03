@@ -1,0 +1,20 @@
+<table>
+    <tr class="tr_title">
+        <td colspan="5">Eliminar un anuncio</td>
+    </tr>
+    {{#posts}}
+      <tr>
+          <td>
+            {{author}}
+          </td><td>
+            {{text}}
+          </td><td>
+            {{price}}
+          </td><td>
+            {{vehicle}}
+          </td><td>
+            <a href="#" onclick="eliminarDirecto('posts', {{getId}})" class="del_link">X</a>
+          </td>
+      </tr>
+    {{/posts}}    
+</table>

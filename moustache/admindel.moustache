@@ -1,0 +1,21 @@
+<table>
+    <tr class="tr_title">
+        <td colspan="2">Eliminar un administrador</td>
+    </tr>
+    <tr>
+        <td class="td_left">Administrador: </td>
+        <td class="td_right">
+            <select id="admin_id">
+                <option value="-1" selected style="visibility: hidden; display: none" disabled="true"></option>
+                {{#administrators}}
+                    <option value="{{getId}}">{{toString}}</option>
+                {{/administrators}}  
+            </select>        
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type=button onclick="eliminar('administrators', 'admin_id')" value="Eliminar administrador">
+        </td>
+    </tr>
+</table>

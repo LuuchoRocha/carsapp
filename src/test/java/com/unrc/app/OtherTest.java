@@ -2,25 +2,25 @@ package com.unrc.app;
 
 import com.unrc.app.models.User;
 import com.unrc.app.models.City;
+import com.unrc.app.models.Other;
 
 import org.javalite.activejdbc.Base;
+import static org.javalite.test.jspec.JSpec.the;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.javalite.test.jspec.JSpec.the;
-
-public class UserTest{
+public class OtherTest {
     @Before
     public void before(){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/carsapp_test", "root", "");
-        System.out.println("UserTest setup");
+        System.out.println("OtherTest setup");
         Base.openTransaction();
     }
 
     @After
     public void after(){
-        System.out.println("UserTest tearDown");
+        System.out.println("OtherTest tearDown");
         Base.rollbackTransaction();
         Base.close();
     }
@@ -36,15 +36,6 @@ public class UserTest{
             .saveIt();
         
         User user = new User();
-        
-        the(user).shouldNotBe("valid");
-        the(user.errors().get("first_name")).shouldBeEqual("value is missing");
-        the(user.errors().get("last_name")).shouldBeEqual("value is missing");
-        the(user.errors().get("pass")).shouldBeEqual("value is missing");
-        the(user.errors().get("email")).shouldBeEqual("value is missing");
-        the(user.errors().get("address")).shouldBeEqual("value is missing");
-        the(user.errors().get("city_id")).shouldBeEqual("value is missing");
-        
         user
             .firstName("John")
             .lastName("Doe")
@@ -53,7 +44,22 @@ public class UserTest{
             .address("Sobremonte 123")
             .setParent(city);
         user.saveIt();
+        
+        Other other = new Other();
 
-        the(user).shouldBe("valid");
+        the(other).shouldNotBe("valid");
+        the(other.errors().get("name")).shouldBeEqual("value is missing");
+        the(other.errors().get("brand")).shouldBeEqual("value is missing");
+        the(other.errors().get("year")).shouldBeEqual("value is missing");
+
+        other
+            .name("Raptor")
+            .brand("Yamaha")
+            .year("2007")
+            .plate("ABC123")
+            .setParent(user);
+        other.saveIt();
+        
+        the(other).shouldBe("valid");
     }
 }

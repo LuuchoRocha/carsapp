@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>CARSAPP - Index</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.getParams.js"></script>
+    <script type="text/javascript" src="extras.js"></script>
+</head>
+<body>
+    <div id="header">CarsAPP</div>
+    <div id="main_menu"> 
+        <div>AdminCP 
+            <ul>  
+                <li onclick="traer('administrators/search', 'content_center')">Buscar administrador</li>
+                <li onclick="traer('posts/search', 'content_center')">Buscar anuncios</li>  
+                <li onclick="traer('users/search', 'content_center')">Buscar usuarios</li>  
+                <li onclick="traer('vehicles/search', 'content_center')">Buscar vehiculos</li>  
+                <li onclick="traer('users/del', 'content_center')">Eliminar usuarios</li>
+                <li onclick="traer('posts/del', 'content_center')">Eliminar anuncios</li>
+                <li onclick="traer('logout', 'content_center')">Cerrar sesion</li>
+            </ul>
+        </div>
+        <div>Registrar
+            <ul>
+                <li onclick="traer('users/new', 'content_center')">Usuario</a></li>
+                <li onclick="traer('cities/new', 'content_center')">Ciudad</a></li>
+            </ul>
+        </div>
+        <div>Ver
+            <ul>
+                <li onclick="traer('users', 'content_center')">Usuarios</a></li>
+                <li onclick="traer('cities', 'content_center')">Ciudades</a></li>
+                <li onclick="traer('vehicles', 'content_center')">Vehiculos</a></li>
+                <li onclick="traer('posts', 'content_center')">Anuncios</a></li>
+                <li onclick="traer('phones', 'content_center')">Telefonos</a></li>
+            </ul>
+        </div>
+        <br clear="all">
+    </div>
+    <div id="content">
+        <div id="content_left"></div>
+        <div id="content_right"></div>
+        <div id="content_center"></div> 
+    </div>
+</body>

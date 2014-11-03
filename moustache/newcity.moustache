@@ -1,0 +1,32 @@
+<form id="formulario" method="post" action="cities">
+	<table>
+        <tr class="tr_title">
+            <td colspan="2"><b>Registrar una ciudad</b></td>
+        </tr><tr class="tr_title">
+            <td class="td_left">Ciudades disponibles</td>
+            <td class="td_right">
+                <select>
+                  {{#cities}}
+                      <option>{{toString}}</option>
+                  {{/cities}}  
+                </select>        
+            </td>
+        </tr><tr>
+            <td class="td_left">Nombre:</td>
+            <td class="td_right"><input type=text name=name></td>
+        </tr><tr>
+            <td class="td_left">Codigo Postal:</td>
+            <td class="td_right"><input type=text name=postcode></td>
+        </tr><tr>
+            <td class="td_left">Provincia:</td>
+            <td class="td_right"><input type=text name=state></td>
+        </tr><tr>
+            <td class="td_left">Pais:</td>
+            <td class="td_right"><input type=text name=country></td>
+        </tr><tr>
+            <td colspan="2">
+                <input type=submit value="Registrar">
+            </td>
+          </tr>
+    </table>
+</form>

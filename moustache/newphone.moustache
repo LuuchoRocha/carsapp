@@ -1,0 +1,23 @@
+<form method="post" action="phones">
+	<table border="0" class="reg_table">
+        <tr class="tr_title">
+            <td colspan="2">Agregar un telefono</td>
+        </tr><tr>
+            <td class="tr_left">Tipo:</td>
+            <td class="tr_right">
+                <select name="type">
+                    <option value="home">Casa</option>
+                    <option value="personal">Movil</option>
+                    <option value="work">Trabajo</option>
+                </select>        
+            </td>
+        </tr><tr>
+            <td class="tr_left">Numero:</td>
+            <td class="tr_right"><input type=text name="number" /></td>
+        </tr><tr>
+            <td colspan="2">
+                <input type=submit value="Agregar telefono" />
+            </td>
+        </tr>
+    </table>
+</form>

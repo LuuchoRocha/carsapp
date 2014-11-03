@@ -1,0 +1,30 @@
+
+* Analisis y comprension del dominio del problema (7 días)
+
+* Estudio de las herramientas (9 días)
+	*GIT (3 días)
+	*MySQL (2 día)
+	*JAVA (1 día)
+	*JUNIT (1 días)
+	*SPARK (2 días)
+	
+* Confeccion del SRS *P* (7 días)
+
+* Instalacion de las herramientas *P* (desp del día 2/1 día)
+
+* Modelado de la base de da.tos (2 días)
+
+* Diseño de los modelos y estructuras de datos (5 días)
+* Diseño del front-end web (2 días)
+* Implementacion: (66 días)
+	* Implementacion de la base de datos (2 días)
+	* Implementacion de los modelos y test (15 días)
+	* Preparacion del servidor web (9 días)
+		*Ensamblado de SPARK con el sistema (7 días)
+	* Implementacion del front-end web del sistema (25 días)
+	* Implementacion ElasticSearch (15 días)
+		*Estudio de ElasticSearch (3 días)
+		*Implementacion de ElasticSearch (7 días)
+		*Implementacion metodos de busqueda (5 días)
+* Testing del software (7 días)
+* Preparación de la presentación del proyecto (2 días)

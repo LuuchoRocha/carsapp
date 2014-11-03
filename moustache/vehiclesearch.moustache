@@ -1,0 +1,16 @@
+<form id="search_form" onsubmit="return false">
+    <table>
+        <tr class="tr_title">
+            <td colspan="2">Buscar vehiculos</td>
+        </tr><tr>
+            <td class="td_left">Usted puede buscar por marca o modelo: </td>
+            <td class="td_right">
+                <input type=text name="search_text">      
+            </td>
+        </tr><tr>
+            <td colspan="2" align="center">
+                <input type=button onclick="traer('vehicles/search/response', 'content_center', 'search_form')" value="Buscar">
+            </td>
+        </tr>
+    </table>
+</form>

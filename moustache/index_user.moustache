@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>CARSAPP - Index</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.getParams.js"></script>
+    <script type="text/javascript" src="extras.js"></script>
+</head>
+<body>
+    <div id="header">CarsAPP</div>
+    <div id="main_menu"> 
+        <div>UserCP 
+            <ul>  
+                <li onclick="traer('logout', 'content_center')">Cerrar sesion</li> 
+                <li onclick="traer('myposts', 'content_center')">Mis anuncios</li>   
+                <li onclick="traer('myvehicles', 'content_center')">Mis vehiculos</li>    
+                <li onclick="traer('myphones', 'content_center')">Mis telefonos</li> 
+                <li onclick="traer('posts/new', 'content_center')">Nuevo anuncio</li>     
+                <li onclick="traer('vehicles/new', 'content_center')">Nuevo vehiculo</li>      
+                <li onclick="traer('phones/new', 'content_center')">Agregar telefono</li>  
+                <li onclick="traer('vehicles/del', 'content_center')">Eliminar vehiculos</li>  
+                <li onclick="traer('posts/search', 'content_center')">Buscar anuncios</li>  
+                <li onclick="traer('users/search', 'content_center')">Buscar usuarios</li>  
+                <li onclick="traer('vehicles/search', 'content_center')">Buscar vehiculos</li>  
+            </ul>
+        </div>
+        <div>Registrar
+            <ul>
+                <li onclick="traer('users/new', 'content_center')">Usuario</li>
+                <li onclick="traer('cities/new', 'content_center')">Ciudad</li>
+            </ul>
+        </div>
+        <div>Ver
+            <ul>
+                <li onclick="traer('users', 'content_center')">Usuarios</li>
+                <li onclick="traer('cities', 'content_center')">Ciudades</li>
+                <li onclick="traer('vehicles', 'content_center')">Vehiculos</li>
+                <li onclick="traer('posts', 'content_center')">Anuncios</li>
+                <li onclick="traer('phones', 'content_center')">Telefonos</li>
+            </ul>
+        </div>
+        <br clear="all">
+    </div> 
+    <div id="content">
+        <div id="content_left"></div>
+        <div id="content_right"></div>
+        <div id="content_center"></div> 
+    </div>
+</body>

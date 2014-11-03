@@ -1,0 +1,35 @@
+<form method="post" action="users">
+    <table>
+        <tr class="tr_title">
+            <td colspan="2">Formulario de registro de usuario</td>
+        </tr><tr>
+            <td class="td_left">Nombre:</td>
+            <td class="td_right"><input type=text name='first_name'></td>
+        </tr><tr>
+            <td class="td_left">Apellido:</td>
+            <td class="td_right"><input type=text name='last_name'></td>
+        </tr><tr>
+            <td class="td_left">Direccion:</td>
+            <td class="td_right"><input type=text name='address'></td>
+        </tr><tr>
+            <td class="td_left">E-Mail:</td>
+            <td class="td_right"><input type=text name='email'></td>
+        </tr><tr>
+            <td class="td_left">Contraseña:</td>
+            <td class="td_right"><input type=password name='pass'></td>
+        </tr><tr>
+            <td class="td_left">Ciudad:</td>
+            <td class="td_right">
+                <select name='postcode'>
+                    {{#cities}}
+                        <option value="{{postcode}}">{{toString}}</option>
+                    {{/cities}}  
+                </select>        
+            </td>
+        </tr><tr>
+            <td colspan="2">
+                <input type=submit value="Registrarme" />
+            </td>
+        </tr>
+    </table>
+</form>

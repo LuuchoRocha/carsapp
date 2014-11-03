@@ -6,62 +6,53 @@ import java.util.List;
 import java.util.Map;
 import org.javalite.activejdbc.Model;
 
-public class User extends Model {
+public class Post extends Model {
     static {
-        validatePresenceOf("first_name", "last_name", "pass", "email", "address", "city_id");
+        validatePresenceOf("user_id", "vehicle_id", "text", "price");
     }
 
-    public User firstName(String s) {
-        this.set("first_name", s);
+    public Post text(String s){
+        this.set("text", s);
         return this;
     }
 
-    public User lastName(String s) {
-        this.set("last_name", s);
+    public String text(){
+        return this.getString("text");
+    }
+
+    public String author(){
+        return this.parent(User.class).toString();
+    }
+
+    public Post price(String i) {
+        this.set("price", i);
         return this;
     }
 
-    public User email(String s) {
-        this.set("email", s);
-        return this;
+    public int price(){
+        return this.getInteger("price");
+    }
+    
+    public String vehicle(){
+        return this.parent(Vehicle.class).toString();
     }
 
-    public User address(String s) {
-        this.set("address", s);
-        return this;
+    public boolean addQuestion(String text, User user) {
+        Question question = new Question();
+        question.set("question", text);
+        question.setParents(user, this);
+        return question.saveIt();
     }
 
-    public User pass(String s) {
-        this.set("pass", s);
-        return this;
+    public List<Question> questions(){
+        return Question.find("post_id = ?", this.getId());
     }
 
-    @Override
-    public String toString() {
-        return (this.firstName() + " " + this.lastName());
+    public Question question(int i) {
+        return Question.findById(i);
     }
 
-    public String firstName(){
-        return this.getString("first_name");
-    }
-
-    public String lastName(){
-        return this.getString("last_name");
-    }
-
-    public String email() {   
-      return this.getString("email");
-    }
-
-    public String address(){
-        return this.getString("adress");
-    }
-
-    public static User findByEmail(String email) {
-        return User.findFirst("email = ?", email);
-    }
-
-    public static List<User> filter(String... args){
+    public static List<Post> filter(String... args){
         if ((args.length>0) && (args.length % 2 == 0)) {
             String query = "";
             String attribute;
@@ -79,25 +70,26 @@ public class User extends Model {
                 i++;
                 query += " AND " + attribute + " = '" + value + "'";
             }
-            return User.find(query);
+            return Post.find(query);
         } else return null;
     }
 
-    public String pass() {
-        return this.getString("pass");
-    }    
-    
+    @Override
+    public String toString(){
+        return this.getString("text");
+    }
+          
     @Override
     public final void afterCreate(){
-        super.afterCreate();
-        
         Map<String, Object> json = new HashMap<>();
-        json.put("name", this.toString());
-        json.put("email", this.get("email"));
+        
+        json.put("text", this.text());
+        json.put("author", this.author());
+        json.put("vehicle", this.vehicle());
 
         ElasticSearchController.client().prepareIndex()
-                .setIndex("users")
-                .setType("user")
+                .setIndex("posts")
+                .setType("post")
                 .setId(this.getId().toString())
                 .setSource(json)
                 .execute()
@@ -110,8 +102,8 @@ public class User extends Model {
         
         ElasticSearchController.client()
                 .prepareDelete()
-                .setIndex("users")
-                .setType("user")
+                .setIndex("posts")
+                .setType("post")
                 .setId(this.getId().toString())
                 .execute()
                 .actionGet();

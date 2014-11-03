@@ -1,0 +1,128 @@
+/*
+ * Cuerpo y cabecera
+ */
+body{
+    color: #FFFFFF;
+    font-family: sans;
+    font-size: 18px;
+    background-color: #152530;
+}
+
+#header{
+    font-size:64px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+#main_menu{
+    margin: 0 auto;
+    width: 80%;
+}
+
+#main_menu div {
+    width: 33.3%;
+    color: #FFFFFF;
+    background-color: #405055;
+    text-align: center;
+    font-size: 24px;
+    height: 30px;
+    float: left;
+    margin: 0px 0px;
+    border-color: #000000;
+    position: relative;
+}
+
+#main_menu div:hover{
+    background-color: #E0F0FF;
+    font-weight: bold;
+    color: black;
+}
+
+#main_menu div ul{
+    font-weight: normal;
+    background-color: #406065;
+    color: black;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#main_menu div ul li{
+    color: #FFFFFF;
+    display: block;
+    padding: 5px 0px;
+    font-size: 20px;
+}
+
+#main_menu div ul li:hover{
+    color: #000000;
+    background-color: #E0F0FF;
+    font-weight: bold;
+}
+
+#main_menu div:hover ul{
+    visibility: visible;
+}
+
+/*
+ * Contenidos
+ */
+
+#content{
+    margin: 0 auto;
+    width: 80%;
+}
+
+#content_center{
+    margin: 0 auto;
+    width: 60%;
+}
+    
+#content_left{
+    float: left;
+    width: 20%;
+}
+
+#content_right{
+    float: right;
+    width: 20%;
+}
+
+/*
+ * Tablas
+ */
+
+#content_center table{
+    margin: 5px auto;
+    background-color: #405550;
+    padding: 20px 20px;
+    border-collapse: collapse;
+}
+
+#content_center table td{
+    padding: 10px 10px;
+    margin: 0;
+    text-align: center;
+}
+
+#content_center .tr_title{
+    background-color: #4E655E;
+    font-weight: bold;
+}
+
+#content_center .td_left{
+    text-align: right;
+}
+#content_center .td_right{
+    text-align: left;
+}
+
+.del_link{
+    color: red; 
+    font-weight: bold; 
+    text-decoration: none;
+}

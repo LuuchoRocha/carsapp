@@ -1,26 +1,26 @@
 package com.unrc.app;
 
+import com.unrc.app.models.Bike;
 import com.unrc.app.models.User;
 import com.unrc.app.models.City;
 
+import static org.javalite.test.jspec.JSpec.the;
 import org.javalite.activejdbc.Base;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.javalite.test.jspec.JSpec.the;
-
-public class UserTest{
+public class BikeTest {
     @Before
     public void before(){
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/carsapp_test", "root", "");
-        System.out.println("UserTest setup");
+        System.out.println("BikeTest setup");
         Base.openTransaction();
     }
 
     @After
     public void after(){
-        System.out.println("UserTest tearDown");
+        System.out.println("BikeTest tearDown");
         Base.rollbackTransaction();
         Base.close();
     }
@@ -36,15 +36,6 @@ public class UserTest{
             .saveIt();
         
         User user = new User();
-        
-        the(user).shouldNotBe("valid");
-        the(user.errors().get("first_name")).shouldBeEqual("value is missing");
-        the(user.errors().get("last_name")).shouldBeEqual("value is missing");
-        the(user.errors().get("pass")).shouldBeEqual("value is missing");
-        the(user.errors().get("email")).shouldBeEqual("value is missing");
-        the(user.errors().get("address")).shouldBeEqual("value is missing");
-        the(user.errors().get("city_id")).shouldBeEqual("value is missing");
-        
         user
             .firstName("John")
             .lastName("Doe")
@@ -53,7 +44,24 @@ public class UserTest{
             .address("Sobremonte 123")
             .setParent(city);
         user.saveIt();
+        
+        Bike bike = new Bike();
+        
+        the(bike).shouldNotBe("valid");
+        the(bike.errors().get("name")).shouldBeEqual("value is missing");
+        the(bike.errors().get("brand")).shouldBeEqual("value is missing");
+        the(bike.errors().get("year")).shouldBeEqual("value is missing");
+        the(bike.errors().get("displacement")).shouldBeEqual("value is missing");
 
-        the(user).shouldBe("valid");
+        bike
+            .displacement(250)
+            .name("XTZ")
+            .brand("Yamaha")
+            .year("2007")
+            .plate("ABC321")
+            .setParent(user);
+        bike.saveIt();
+        
+        the(bike).shouldBe("valid");
     }
 }

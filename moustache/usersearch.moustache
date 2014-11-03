@@ -1,0 +1,16 @@
+<form id="search_form" onsubmit="return false">
+    <table>
+        <tr class="tr_title">
+            <td colspan="2">Buscar usuarios</td>
+        </tr><tr>
+            <td class="td_left">Su búsqueda: </td>
+            <td class="td_right">
+                <input type=text name="search_text">      
+            </td>
+        </tr><tr>
+            <td colspan="2" align="center">
+                <input type=button onclick="traer('users/search/response', 'content_center', 'search_form')" value="Buscar">
+            </td>
+        </tr>
+    </table>
+</form>

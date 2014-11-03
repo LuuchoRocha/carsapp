@@ -1,0 +1,18 @@
+<table>
+    <tr class="tr_title">
+      <td>
+        Tipo
+      </td><td>
+        Numero
+      </td>
+    </tr>
+    {{#phones}}
+      <tr>
+          <td>
+            {{type}}
+          </td><td>
+            {{num}}
+          </td>
+      </tr>
+    {{/phones}} 
+</table>

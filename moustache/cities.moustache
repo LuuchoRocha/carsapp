@@ -1,0 +1,26 @@
+<table>
+    <tr class="tr_title">
+      <td>
+        Nombre
+      </td><td>
+        Provincia
+      </td><td>
+        Pais
+      </td><td>
+        Codigo Postal
+      </td>
+    </tr>
+    {{#cities}}
+      <tr>
+          <td>
+            {{name}}
+          </td><td>
+            {{state}}
+          </td><td>
+            {{country}}
+          </td><td>
+            {{postcode}}
+          </td>
+      </tr>
+    {{/cities}} 
+</table>

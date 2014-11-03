@@ -1,0 +1,23 @@
+<table>
+    <tr class="tr_title">
+      <td colspan="3">Resultados</td>
+    </tr>
+    <tr class="tr_title">
+      <td>ID</td>
+      <td>Nombre</td>
+      <td>E-Mail</td>
+    </tr>
+    {{#users}}
+    <tr>
+      <td>
+        {{getId}}
+      </td>
+      <td>
+        {{toString}}
+      </td>
+      <td>
+        {{email}}
+      </td>
+    </tr>
+    {{/users}} 
+</table>
